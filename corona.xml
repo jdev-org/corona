@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application lang="fr,en" langfile="demo/demo.i18n.json"
-        title="CODIV-19" showhelp="true" help="apps/corona/corona/help.html" logo="apps/corona/corona/img/corona.png"  exportpng="true" style="css/themes/black.css" geoloc="true"/>
+        title="CODIV-19" showhelp="true" help="apps/coronaviewer/corona/help.html" logo="apps/coronaviewer/corona/img/corona.png"  exportpng="true" style="css/themes/black.css" geoloc="true"/>
     <mapoptions maxzoom="18" projection="EPSG:3857" rotation="true" center="2054627.32,2798206.73" zoom="3" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
     <baselayers style="gallery">
 	<baselayer type="OSM" id="osm1" label="OpenStreetMap" title="OpenStreetMap" thumbgallery="img/basemap/osm.png" url="http://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png"  visible="true"/>
@@ -18,20 +18,20 @@
                 url="https://gis.jdev.fr:443/geoserver/ows"
                 attribution="John Hopkins University"
             >
-            <template url="apps/corona/corona/template/corona.mst"></template>
+            <template url="apps/coronaviewer/corona/template/corona.mst"></template>
             </layer>
             <layer 
                 id="corona"
                 type="customlayer"
-                legendurl="apps/corona/corona/legend/heatmap.png"
+                legendurl="apps/coronaviewer/corona/legend/heatmap.png"
                 infoformat="application/vnd.ogc.gml" featurecount="5"
-                url="apps/corona/corona/customlayers/corona.js"
+                url="apps/coronaviewer/corona/customlayers/corona.js"
                 time="true" queryable="false" name="Heatmap 2019-nCoV" visible="true" tiled="true" expanded="true" style="" opacity="0.7" 
                 customcontrol="true"
                 minScale="50000"
-                customcontrolpath="apps/corona/corona/customcontrols/"
+                customcontrolpath="apps/coronaviewer/corona/customcontrols/"
             >
-            <template url="apps/corona/corona/template/corona.mst"></template>
+            <template url="apps/coronaviewer/corona/template/corona.mst"></template>
             </layer>            
 		</theme>        
     </themes>
