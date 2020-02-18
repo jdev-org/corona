@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application lang="fr,en" langfile="demo/demo.i18n.json"
+        title="Expansion du Coronavirus (2019-nCoV)" showhelp="true" help="apps/corona/help.html" logo="apps/corona/img/corona.png"  exportpng="true" style="css/themes/black.css" geoloc="true"/>
+    <mapoptions maxzoom="18" projection="EPSG:3857" rotation="true" center="2054627.32,2798206.73" zoom="3" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
+    <baselayers style="gallery">
+	<baselayer type="OSM" id="osm1" label="OpenStreetMap" title="OpenStreetMap" thumbgallery="img/basemap/osm.png" url="http://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png"  visible="false"/>
+	<baselayer visible="true" type="OSM" id="darkmatter" label="Dark Matter" title="CartoDb" thumbgallery="img/basemap/darkmatter.png" url="http://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png" maxzoom="20" attribution="Map tiles by CartoDb, under CC BY 3.0"/>
+	<baselayer visible="false" type="OSM" id="stamen1" label="Toner-lite" title="Stamen Design" thumbgallery="img/basemap/toner-lite.png" url="http://{a-d}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png" maxzoom="20" attribution="Stamen toner-lite"/>    
+    </baselayers>
+    <proxy url=""/>
+    <themes mini="false">
+        <theme name="Virus"  id="formation" collapsed="true" icon="fas fa-microscope">
+            <layer 
+                id="datacorona"
+                infoformat="application/vnd.ogc.gml" featurecount="5"
+                time="true" queryable="true" name="Cas confirmés / pays" visible="true" tiled="false" expanded="true" style="" opacity="0.4" 
+                url="https://gis.jdev.fr:443/geoserver/ows"
+                attribution="John Hopkins University"
+            >
+            <template url="apps/corona/template/corona.mst"></template>
+            </layer>
+            <layer 
+                id="corona"
+                type="customlayer"
+                legendurl="apps/corona/legend/heatmap.png"
+                infoformat="application/vnd.ogc.gml" featurecount="5"
+                url="apps/corona/customlayers/corona.js"
+                time="true" queryable="false" name="Heatmap 2019-nCoV" visible="true" tiled="true" expanded="true" style="" opacity="0.7" 
+                customcontrol="true"
+                minScale="50000"
+                customcontrolpath="apps/corona/customcontrols/"
+            >
+            <template url="apps/corona/template/corona.mst"></template>
+            </layer>            
+		</theme>        
+    </themes>
+</config>

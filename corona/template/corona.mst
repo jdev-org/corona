@@ -1,0 +1,75 @@
+{{#features}}
+	<li class="item" style="width:238px;">
+        {{#country}}
+            <h3>
+                <strong>{{country}}</strong>
+            </h3>
+        {{/country}}
+        {{#state}}
+            <h3>
+                {{state}}
+            </h3>
+        {{/state}}        
+        {{#date}}
+            <p id='date_{{date}}__{{country}}'>
+                {{date}}
+            </p>
+        {{/date}}
+        <div class="panel panel-default">
+            <div class="panel-body panel-graph"> 
+            	<img src="apps/corona/svg/people_red.svg" style="width:30%;">  
+            	<p style="margin:-5px 0px -5px 0px!important;">
+            		<span class="number"></span><h4 class="number" style="font-size:30px;">{{confirmed}}</h4>
+            	</p>
+            	<p class="title-number">Nombre de cas confirmés<br></p>                                   
+            </div>
+		</div>  
+	</li>
+{{/features}}
+
+
+<style>
+	.title-feature, .indicateur {
+		color: #2d4059;
+		font-family:"roboto_black";
+		font-size:23px;
+		margin-bottom:3%;
+		line-height:1;			
+	}
+	.indicateur {			
+		text-align: center;
+	}
+	.panel-graph {
+	    color: black;
+	    text-align: center;
+	}
+	.number {
+	    font-size: 40px;
+	    font-weight: 900;
+	}		
+	.text-feature{
+		font-family:"roboto_regular";
+		color:#555;
+		font-size:13px;
+		margin-top:10%;
+	}
+</style>
+
+<script>
+
+var setDate=function() {
+    {{#features}}
+		console.log('{{date}}');
+        var date = '{{date}}';
+        var country = '{{country}}';
+        var id = `date_${date}__${country}`;
+		var D = date.substring(8, 10);
+		var M = date.substring(5, 7);
+		var Y = date.substring(0, 4);
+        document.getElementById(id).innerText = `Situation au ${D}/${M}/${Y}.`;
+    {{/features}}
+
+}
+setDate();
+
+</script>
