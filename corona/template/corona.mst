@@ -17,7 +17,7 @@
         {{/date}}
         <div class="panel panel-default">
             <div class="panel-body panel-graph"> 
-            	<img src="apps/corona/svg/people_red.svg" style="width:30%;">  
+            	<img src="apps/corona/corona/svg/people_red.svg" style="width:30%;">  
             	<p style="margin:-5px 0px -5px 0px!important;">
             		<span class="number"></span><h4 class="number" style="font-size:30px;">{{confirmed}}</h4>
             	</p>
